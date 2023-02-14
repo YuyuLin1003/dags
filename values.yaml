@@ -960,7 +960,7 @@ git:
         name: dags
         ## Path to a folder in the repository containing the dags
         ##
-        path: /
+        path: /dags
   ## Get Plugins files from git repositories.
   ## @param git.plugins.enabled Enable in order to download Plugins files from git repositories.
   ## @param git.plugins.repositories [array] Array of repositories from which to download DAG files

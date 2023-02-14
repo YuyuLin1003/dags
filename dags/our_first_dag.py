@@ -12,7 +12,7 @@ with DAG(
     dag_id='our_first_dag_v4',
     default_args=default_args,
     description='This is our first dag that we write',
-    start_date=datetime(2023, 2, 1, 2),
+    start_date=datetime(2023, 2, 14),
     schedule_interval='@daily'
 ) as dag:
     task1 = BashOperator(task_id='first_task',
@@ -30,4 +30,4 @@ with DAG(
     # task1 >> task3
 
     #  task dependency method 3
-    task1 >>[task2,task3]
+    task1 
