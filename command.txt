@@ -1,0 +1,29 @@
+** Please be patient while the chart is being deployed **
+
+Airflow can be accessed via port 8080 on the following DNS name from within your cluster:
+
+    airflow.default.svc.cluster.local
+
+To connect to Airflow from outside the cluster, perform the following steps:
+
+1.  Create a port-forward to the service:
+
+    kubectl port-forward --namespace default svc/airflow 8080:8080 &
+    echo "Airflow URL: http://127.0.0.1:8080"
+
+2. Open a browser and access Airflow using the obtained URL.
+
+3. Get your Airflow login credentials by running:
+
+    export AIRFLOW_PASSWORD=$(kubectl get secret --namespace "default" airflow -o jsonpath="{.data.airflow-password}" | base64 -d)
+    echo User:     user
+    echo Password: $AIRFLOW_PASSWORD
+
+helm install bitnami/airflow --set dags.existingConfigmap=/mnt/c/Users/yulinz/airflow/dags  --generate-name
+
+helm install bitnami/airflow --generate-name
+
+helm upgrade --install airflow  bitnami/airflow -f values.yaml
+
+helm show values bitnami/airflow
+aDA2RklzZUVzcQ==

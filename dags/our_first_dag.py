@@ -9,7 +9,7 @@ default_args = {
     'retry_delay': timedelta(minutes=2)
 }
 with DAG(
-    dag_id='our_first_dag_v4',
+    dag_id='our_first_dag_v5',
     default_args=default_args,
     description='This is our first dag that we write',
     start_date=datetime(2023, 2, 14),
@@ -30,4 +30,4 @@ with DAG(
     # task1 >> task3
 
     #  task dependency method 3
-    task1 
+    task1 >> [task2,task3]
