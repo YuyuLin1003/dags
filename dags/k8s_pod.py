@@ -12,5 +12,5 @@ k = KubernetesPodOperator(
     do_xcom_push=True,
 )
 
-with DAG(dag_id="dynamic_task_pod_20", start_date=datetime.utcnow()) as dag:
+with DAG(dag_id="k8s_pod_dag_01", start_date=datetime.utcnow()) as dag:
     k.dry_run()
