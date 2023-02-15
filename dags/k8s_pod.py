@@ -46,7 +46,6 @@ with DAG(
     t1 = KubernetesPodOperator(
         namespace='default',
         image='python:3.7',
-        image_pull_policy = 'Never',
         cmds=["python","-c", "print('hello task 1 ..................')"],
         labels={"foo": "bar"},
         name="task-1",
@@ -59,7 +58,6 @@ with DAG(
     t2 = KubernetesPodOperator(
         namespace='default',
         image='python:3.7',
-        image_pull_policy='Never',
         cmds=["python", "-c", "print('hello task 2 ..................')"],
         labels={"foo": "bar"},
         name="task-2",
