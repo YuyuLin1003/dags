@@ -5,6 +5,12 @@ from datetime import datetime
 from airflow import DAG
 from airflow.decorators import task
 
+
+def createList(n):
+    lst = []
+    for i in range(n+1):
+        lst.append(i)
+    return(lst)
 with DAG(dag_id="dynamic_task_easy_01", start_date=datetime(2023, 2, 15)) as dag:
 
     @task
@@ -16,6 +22,6 @@ with DAG(dag_id="dynamic_task_easy_01", start_date=datetime(2023, 2, 15)) as dag
         total = sum(values)
         print(f"Total was {total}")
         return total
-
-    added_values = add_one.expand(x=range(1,3))
+    mylist=createList(3)
+    added_values = add_one.expand(mylist)
     sum_it(added_values)
