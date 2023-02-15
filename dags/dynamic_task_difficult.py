@@ -9,6 +9,7 @@ def createList(n):
     lst = []
     for i in range(n+1):
         lst.append(i)
+    lst.pop(0)
     return(lst)
 with DAG(dag_id="dynamic_task_difficult_01", start_date=datetime(2023, 2, 15)) as dag:
 
@@ -22,6 +23,6 @@ with DAG(dag_id="dynamic_task_difficult_01", start_date=datetime(2023, 2, 15)) a
         print(f"Total was {total}")
         return total
 
-    mylist=createList(3)
+    mylist=createList(8)
     added_values = add_one.expand(x=mylist)
     sum_it(added_values)
