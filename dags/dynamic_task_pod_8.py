@@ -11,11 +11,11 @@ def createList(n):
         lst.append(i)
     lst.pop(0)
     return(lst)
-with DAG(dag_id="dynamic_task_difficult_01", start_date=datetime(2023, 2, 15)) as dag:
+with DAG(dag_id="dynamic_task_pod_8", start_date=datetime.today) as dag:
 
     @task
     def add_one(x: int):
-        return x + 1
+        return 1
 
     @task
     def sum_it(values):
