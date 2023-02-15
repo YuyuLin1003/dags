@@ -23,5 +23,5 @@ with DAG(dag_id="dynamic_task_difficult_01", start_date=datetime(2023, 2, 15)) a
         return total
 
     mylist=createList(10)
-    added_values = add_one.expand(mylist)
+    added_values = add_one.expand(x=mylist)
     sum_it(added_values)
