@@ -55,7 +55,6 @@ with DAG(
         is_delete_operator_pod=True,
         in_cluster=False,
         task_id="task-1",
-        config_file=os.path.expanduser('~')+"/.kube/config",
         get_logs=True
     )
 
@@ -69,7 +68,6 @@ with DAG(
         is_delete_operator_pod=True,
         in_cluster=False,
         task_id="task-2",
-        config_file=os.path.expanduser('~')+"/.kube/config",
         get_logs=True
     )
 
