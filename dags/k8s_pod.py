@@ -36,7 +36,7 @@ default_args = {
     # 'trigger_rule': 'all_success'
 }
 with DAG(
-    'python_kubernetes_workflow',
+    'python_kubernetes_workflow_01',
     default_args=default_args,
     description='python_kubernetes_workflow',
     schedule_interval=timedelta(days=1),
