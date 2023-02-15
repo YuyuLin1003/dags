@@ -12,7 +12,7 @@ def createList(n):
         lst.append(i)
     lst.pop(0)
     return(lst)
-with DAG(dag_id="dynamic_task_easy_01", start_date=datetime.today) as dag:
+with DAG(dag_id="dynamic_task_easy_01", start_date=datetime.utcnow()) as dag:
 
     @task
     def add_one(x: int):
