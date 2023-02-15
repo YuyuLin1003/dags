@@ -5,7 +5,7 @@ from datetime import datetime
 from airflow import DAG
 from airflow.decorators import task
 
-with DAG(dag_id="example_dynamic_task_mapping_01", start_date=datetime(2023, 2, 15)) as dag:
+with DAG(dag_id="example_dynamic_task_mapping_02", start_date=datetime(2023, 2, 15)) as dag:
 
     @task
     def add_one(x: int):
