@@ -1,4 +1,4 @@
-from datetime import timedelta
+from datetime import timedelta,datetime
 from textwrap import dedent
 
 # The DAG object; we'll need this to instantiate a DAG
@@ -40,7 +40,7 @@ with DAG(
     default_args=default_args,
     description='python_kubernetes_workflow',
     schedule_interval=timedelta(days=1),
-    start_date=days_ago(2),
+    start_date=datetime.utcnow(),
     tags=['python_kubernetes_workflow'],
 ) as dag:
 
