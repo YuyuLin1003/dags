@@ -17,5 +17,5 @@ with DAG(dag_id="example_dynamic_task_mapping_01", start_date=datetime(2023, 2, 
         print(f"Total was {total}")
         return total
 
-    added_values = add_one.expand(x=[1, 2, 3])
+    added_values = add_one.expand(x=range(1,100))
     sum_it(added_values)
