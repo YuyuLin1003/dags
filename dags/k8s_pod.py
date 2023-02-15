@@ -6,8 +6,6 @@ from airflow import DAG
 
 # Operators; we need this to operate!
 from airflow.operators.bash import BashOperator
-from airflow.providers.cncf.kubernetes.backcompat.volume_mount import VolumeMount
-from airflow.providers.cncf.kubernetes.backcompat.volume import Volume
 from airflow.utils.dates import days_ago
 
 from airflow.providers.cncf.kubernetes.operators.kubernetes_pod import KubernetesPodOperator
