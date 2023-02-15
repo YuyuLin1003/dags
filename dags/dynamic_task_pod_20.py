@@ -15,7 +15,7 @@ with DAG(dag_id="dynamic_task_pod_20", start_date=datetime.utcnow()) as dag:
 
     @task
     def add_one(x: int):
-        return 1
+        return x+1
 
     @task
     def sum_it(values):
